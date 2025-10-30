@@ -41,6 +41,7 @@ From all runs, we select the **top fifteen** models (by RMSE) to form the **deep
 ## Test cases
 
 1. **DCNN.**
+First test case of applyng the Bayesian optimized deep ensemble with Sobol intialization is conducted on a DCNN neural network and CFD data, the data represents eddy viscosity. The figure shows the DCNN architectur, and the CFD computational domain. 
 <p align="center">
   <img src="Figures/test_case_dcnn.jpg" width="80%" alt="DCNN test case on CFD data">
   <br><em>DCNN test case on CFD data.</em>
