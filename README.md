@@ -48,3 +48,10 @@ First test case of applyng the Bayesian optimized deep ensemble with Sobol intia
 </p>
 
 The DCNN folder inslcudes the optimization on the original computational data, the optimization with 10% noise addition, and comparison with other optimization techniques such as evolution algorithm, random search and greedy selection, and bayesian optimization with random search intialization. 
+
+**results**
+<p align="center">
+  <img src="Figures/DCNN_results.jpg" width="80%" alt="Results of test case 1">
+  <br><em>Results of test case 1: Noise free environment, and with the presence of noise.</em>
+</p>
+
