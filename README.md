@@ -19,12 +19,7 @@ and limiting the number of optimization iterations.
 
 We integrate **deep ensembles** with **Bayesian optimization** to (1) reduce **epistemic** uncertainty by selecting diverse yet high-performing neural networks, (2) calibrate **aleatoric** variance predicted by each model, and (3) minimize prediction error on unseen data. Hyperparameter search is performed with the **Ax platform** (PyTorch-based; uses **BoTorch** under the hood).
 
-We optimize the **Root Mean Square Error (RMSE)** on a validation split:
-$$
-\mathrm{RMSE} \;=\; \sqrt{\frac{1}{n}\sum_{i=1}^{n}\bigl(y_i - \hat{y}_i\bigr)^2} \tag{1}
-$$
-where \(y_i\) is the ground truth and \(\hat{y}_i\) the predicted mean for sample \(i\), with \(n\) validation samples.
-Although negative log-likelihood (NLL) could also be minimized, RMSE provides a simpler surface because it avoids balancing mean-squared error against predicted variance terms.
+We optimize the **Root Mean Square Error (RMSE)** on a validation split. Although negative log-likelihood (NLL) could also be minimized, RMSE provides a simpler surface because it avoids balancing mean-squared error against predicted variance terms.
 
 **Optimization strategy**
 
