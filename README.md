@@ -11,7 +11,35 @@ We adopt several efficiency-enhancing strategies: utilizing a Sobol sequence to 
 conducting optimization on a representative smaller dataset, reducing hyperparameter dimensionality, constraining hyperparameter bounds based on prior knowledge, fixing the number of neural network training iterations, 
 and limiting the number of optimization iterations.
 
-Methodology:
+## Methodology
 <p align="center">
-<img src="Figures/optimization_strategy.jpg" width="60%" alt="Pipeline">
+  <img src="Figures/optimization_strategy.jpg" width="60%" alt="Optimization strategy for BODE (Sobol init + Bayesian optimization)">
+  <br><em>Optimization strategy: Sobol initialization followed by Bayesian optimization.</em>
 </p>
+
+We integrate **deep ensembles** with **Bayesian optimization** to (1) reduce **epistemic** uncertainty by selecting diverse yet high-performing neural networks, (2) calibrate **aleatoric** variance predicted by each model, and (3) minimize prediction error on unseen data. Hyperparameter search is performed with the **Ax platform** (PyTorch-based; uses **BoTorch** under the hood).
+
+We optimize the **Root Mean Square Error (RMSE)** on a validation split:
+$$
+\mathrm{RMSE} \;=\; \sqrt{\frac{1}{n}\sum_{i=1}^{n}\bigl(y_i - \hat{y}_i\bigr)^2} \tag{1}
+$$
+where \(y_i\) is the ground truth and \(\hat{y}_i\) the predicted mean for sample \(i\), with \(n\) validation samples.
+Although negative log-likelihood (NLL) could also be minimized, RMSE provides a simpler surface because it avoids balancing mean-squared error against predicted variance terms.
+
+**Optimization strategy**
+
+1. **Sobol initialization.**  
+   A deterministic Sobol sequence uniformly samples the search space, yielding diverse initial configurations that act as priors for the Gaussian-process (GP) surrogate used in Bayesian optimization.
+
+2. **Bayesian optimization.**  
+   The GP surrogate is iteratively updated; new configurations are proposed (via acquisition functions), evaluated, and fed back to refine the surrogate.
+
+To promote exploration, we run **five** independent optimizations in parallel with different random seeds. While Sobol is deterministic, the seed affects scrambling/randomization, encouraging each run to explore distinct regions. Consequently, the five GP surrogates capture different local behaviors and enrich the candidate set.
+
+From all runs, we select the **top fifteen** models (by RMSE) to form the **deep ensemble**—a size chosen empirically for strong performance with diminishing returns beyond this point.
+
+**Data & hyperparameters**
+
+- **Splits:** train (fit), validation (optimize), held-out test (report).  
+- **Search space (examples):** learning rate, dropout rate, activation function, and architecture-specific hyperparameters.
+
