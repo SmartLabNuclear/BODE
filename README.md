@@ -38,3 +38,10 @@ From all runs, we select the **top fifteen** models (by RMSE) to form the **deep
 - **Splits:** train (fit), validation (optimize), held-out test (report).  
 - **Search space (examples):** learning rate, dropout rate, activation function, and architecture-specific hyperparameters.
 
+## Test cases
+
+1. **DCNN.**
+<p align="center">
+  <img src="Figures/test_case_dcnn.jpg" width="60%" alt="DCNN test case on CFD data">
+  <br><em>Optimization strategy: Sobol initialization followed by Bayesian optimization.</em>
+</p>
