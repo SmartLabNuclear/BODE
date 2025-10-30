@@ -65,3 +65,6 @@ The DCNN folder inslcudes the optimization on the original computational data, t
   <br><em>Results of test case 1: Noise free environment, and with the presence of noise.</em>
 </p>
 
+Our results demonstrate that the proposed BODE outperforms four alternative optimization algorithms: a manually tuned baseline ensemble, an evolutionary algorithm, random search combined with a greedy selection, and Bayesian optimization initialized with random sampling. This improvement in predictive accuracy and UQ highlights the effectiveness of integrating Sobol sequence initialization with Bayesian optimization, providing more robust exploration and efficient convergence in the hyperparameter search.
+
+Additionally, the BODE approach estimated around zero aleatoric uncertainty in noise-free environment, and effectively captured the inherent noise in the data when noise is introudced. Efficiency measures, including parallel computing, constrained hyperparameter search, subset optimization, and fixed training iterations, successfully mitigated the computational expense associated with Bayesian optimization, enhancing the practical feasibility and scalability of BODE for complex engineering applications.
