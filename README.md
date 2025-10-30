@@ -42,6 +42,6 @@ From all runs, we select the **top fifteen** models (by RMSE) to form the **deep
 
 1. **DCNN.**
 <p align="center">
-  <img src="Figures/test_case_dcnn.jpg" width="60%" alt="DCNN test case on CFD data">
+  <img src="Figures/test_case_dcnn.jpg" width="80%" alt="DCNN test case on CFD data">
   <br><em>DCNN test case on CFD data.</em>
 </p>
