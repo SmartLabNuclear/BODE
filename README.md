@@ -12,4 +12,4 @@ conducting optimization on a representative smaller dataset, reducing hyperparam
 and limiting the number of optimization iterations.
 
 Methodology:
-![Pipeline](Figures/optimization_strategy.jpg)
+<img src="assets/optimization_strategy.jpg" width="60%" alt="Pipeline">
