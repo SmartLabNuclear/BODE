@@ -12,4 +12,5 @@ conducting optimization on a representative smaller dataset, reducing hyperparam
 and limiting the number of optimization iterations.
 
 Methodology:
+
 <img src="Figures/optimization_strategy.jpg" width="60%" alt="Pipeline">
