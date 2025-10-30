@@ -46,3 +46,5 @@ First test case of applyng the Bayesian optimized deep ensemble with Sobol intia
   <img src="Figures/test_case_dcnn.jpg" width="80%" alt="DCNN test case on CFD data">
   <br><em>DCNN test case on CFD data.</em>
 </p>
+
+The DCNN folder inslcudes the optimization on the original computational data, the optimization with 10% noise addition, and comparison with other optimization techniques such as evolution algorithm, random search and greedy selection, and bayesian optimization with random search intialization. 
