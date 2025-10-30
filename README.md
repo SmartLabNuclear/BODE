@@ -1,5 +1,15 @@
 ## Introduction
-This work introduces a framework for optimizing deep ensmebles using Bayesian optimization, and Sobol sequence to build the prior distribution. The approach is scalable and could be applied to any type of neural networks. The current implementation include a test case on a Densely Connected Convolution Neural Network (DCNN) and a Multi-Layer Perception (MLP) neural network.  The DCNN is trained on computational data, and noise is introduced to the data to asses the method performance on noisy data. The MLP is trained on experimental data.  
+This work introduces a framework for optimizing deep ensmebles using Bayesian optimization, and Sobol sequence to build the prior distribution. The approach is scalable and could be applied to any type of neural networks. The current implementation include a test case on a Densely Connected Convolution Neural Network (DCNN) and a Multi-Layer Perception (MLP) neural network.  The DCNN is trained on computational data, and noise is introduced to the data to asses the method performance on noisy data. The MLP is trained on experimental data. 
+
+The MLP work will be added when the results are published. 
+
+The full work could be accessed at:
+
+1) Bayesian Optimized Deep Ensemble for Uncertainty Quantification of Deep Neural Networks: a System Safety Case Study on Sodium Fast Reactor Thermal Stratification Modeling
+https://www.sciencedirect.com/science/article/pii/S095183202500554X
+
+2) Bayesian-Optimised, Feature-Augmented Deep Ensemble for Physics-Guided Critical Heat-Flux Prediction with Uncertainty Quantification
+https://www.techrxiv.org/doi/full/10.36227/techrxiv.175372774.44091559
 
 ## Problem statement
 When DEs are not adequately optimized or constructed using a fixed DNN architecture and only varied through random weight and bias initializations, their performance may degrade for highly nonlinear or high-dimensional problems.
