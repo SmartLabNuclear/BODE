@@ -12,3 +12,4 @@ conducting optimization on a representative smaller dataset, reducing hyperparam
 and limiting the number of optimization iterations.
 
 Methodology:
+![Pipeline](Figures/optimization_stratefy.jpg)
